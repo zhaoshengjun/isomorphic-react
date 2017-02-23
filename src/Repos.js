@@ -12,5 +12,6 @@ export const Repos = (props) => (
         <NavLink to="/repos/facebook/react">React</NavLink>
       </li>
     </ul>
+    {props.children}
   </div>
 )
