@@ -7,9 +7,10 @@ import {Repos} from './src/Repos';
 
 render(
   <Router history={hashHistory}>
-    <Route path='/' component={App}></Route>
-    <Route path='/about' component={About}></Route>
-    <Route path='/repos' component={Repos}></Route>
+    <Route path='/' component={App}>
+      <Route path='/about' component={About}></Route>
+      <Route path='/repos' component={Repos}></Route>
+    </Route>
   </Router>,
   document.getElementById('app')
 )

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-export const App = () => (
+export const App = (props) => ( 
   <div>
     <h1>Hello React Router!</h1>
     <ul role="nav">
@@ -12,5 +12,6 @@ export const App = () => (
         <Link to="/repos">Repos</Link>
       </li>
     </ul>
+    {props.children} 
   </div>
 )
