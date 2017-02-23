@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router';
 import {NavLink} from './NavLink';
+import {Home} from './Home';
 
 export const App = (props) => ( 
   <div>
@@ -13,6 +13,6 @@ export const App = (props) => (
         <NavLink to="/repos">Repos</NavLink>
       </li>
     </ul>
-    {props.children} 
+    {props.children || Home} 
   </div>
 )
