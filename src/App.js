@@ -7,10 +7,10 @@ export const App = (props) => (
     <h1>Hello React Router!</h1>
     <ul role="nav">
       <li>
-        <Link to="/about" activeClassName="active">About</Link>
+        <NavLink to="/about">About</NavLink>
       </li>
       <li>
-        <Link to="/repos" activeStyle={{color:'red'}}>Repos</Link>
+        <NavLink to="/repos">Repos</NavLink>
       </li>
     </ul>
     {props.children} 
