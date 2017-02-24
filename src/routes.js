@@ -6,7 +6,7 @@ import { Repos } from "./Repos";
 import { Repo } from "./Repo";
 import { Home } from "./Home";
 
-export const routes = () => (
+export const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="/repos" component={Repos}>
