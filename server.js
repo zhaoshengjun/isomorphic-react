@@ -13,10 +13,18 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("*", (req, res) => {
-  match({ routes: routes, location: req.url }, (err, redirect, props) => {
-    const appHtml = renderToString(<RouterContext {...props} />);
-    res.send(renderPage(appHtml));
-  });
+  if (err) {
+    res.status(500).send(err.message);
+  } else if (redirect) {
+    res.redirect(redirect.pathname + redirect.search);
+  } else if (props) {
+    match({ routes: routes, location: req.url }, (err, redirect, props) => {
+      const appHtml = renderToString(<RouterContext {...props} />);
+      res.send(renderPage(appHtml));
+    });
+  } else {
+    res.status(404).send("Not found");
+  }
 });
 
 let PORT = process.env.PORT || 8800;
