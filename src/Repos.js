@@ -3,9 +3,9 @@ import { browserHistory } from "react-router";
 import { NavLink } from "./NavLink";
 
 export class Repos extends Component {
-  // static contextTypes = {
-  //   router: React.PropTypes.object
-  // }
+  static contextTypes = {
+    router: React.PropTypes.object
+  };
 
   handleSubmit(evt) {
     evt.preventDefault();
@@ -13,8 +13,8 @@ export class Repos extends Component {
     const repo = evt.target.elements[1].value;
     const path = `/repos/${userName}/${repo}`;
     console.log(path);
-    browserHistory.push(path);
-    // this.contextTypes.router.push(path)
+    // browserHistory.push(path);
+    this.contextTypes.router.push(path);
   }
 
   render() {
